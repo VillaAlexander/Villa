@@ -18,12 +18,30 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
+  <script>
+    Notification.requestPermission().then(perm => {
+      if (perm === 'granted') {
+        
+      }
+    });
+
+    function Notificacion() {
+      new Notification("WELCOME TO THE APP GYM ADDICT", {
+        body: 'BIENVENIDO, EMPECEMOS CON TU RUTINA',
+        icon: 'https://cdn-icons-png.flaticon.com/512/69/69840.png',
+        vibrate: [100, 100, 100],
+        onClick: function () {
+          window.location = "https://google.es"
+        }
+      });
+    }
+  </script>
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container px-5">
                 <a class="navbar-brand" href="#!">GYM ADDICT</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-
+                <button onclick="Notificacion()" class="btn btn-success mt-5 m-5" style="background-color: blue;">Notificación</button>
             </div>
         </nav>
         <!-- Page Content-->
